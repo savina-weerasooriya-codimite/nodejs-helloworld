@@ -4,4 +4,7 @@ steps:
     - --destination=gcr.io/test-dev-367406/helloworld
     - --cache=true
     - --cache-ttl=8h
-    - --dockerfile=Dockerfile
+    - --dockerfile=Dockerfile.dev
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['run', 'deploy', 'helloworld-dev', '--image', 'gcr.io/test-dev-367406/helloworld:latest', '--region', 'us-central1', '--allow-unauthenticated']
