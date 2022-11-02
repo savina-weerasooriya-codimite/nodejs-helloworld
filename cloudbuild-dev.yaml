@@ -1,0 +1,7 @@
+steps:
+  - name: 'gcr.io/kaniko-project/executor:latest'
+    args:
+    - --destination=gcr.io/test-dev-367406/helloworld
+    - --cache=true
+    - --cache-ttl=8h
+    - --dockerfile=Dockerfile
