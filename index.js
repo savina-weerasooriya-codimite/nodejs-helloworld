@@ -5,6 +5,7 @@ const port = process.env.PORT || 8000
 const app = express()
 
 app.get('/', (req,res) => {
+    console.log('GET / | default route')
     res.send("Default route")
 })
 
